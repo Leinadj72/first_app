@@ -1,3 +1,4 @@
+import 'package:first_app/base/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,19 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: const Center(child: Text("Flutter Title")),
-        ),
-        body: const Center(child: Text("Hii, Leinad")),
-      ),
+    return const MaterialApp(
+      home: BottomNavBar(),
     );
   }
 }
