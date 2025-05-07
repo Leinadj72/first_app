@@ -1,3 +1,4 @@
+import 'package:first_app/screens/home_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -10,16 +11,17 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
-    const Center(child: Text("Home")),
+    const HomeScreen(),
     const Center(child: Text("Search")),
     const Center(child: Text("Tickets")),
     const Center(child: Text("Profile")),
   ];
 
-  // ignore: unused_field
   int _selectedIndex = 0;
   void _onItemClicked(int index) {
-    _selectedIndex = index;
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
@@ -28,8 +30,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
       appBar: AppBar(
         title: const Center(child: Text("My tickets")),
       ),
-      body: appScreens[1],
+      body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
           onTap: _onItemClicked,
           selectedItemColor: Colors.blueGrey,
           unselectedItemColor: const Color(0xFF526400),
