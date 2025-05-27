@@ -1,5 +1,6 @@
 import 'package:first_app/base/res/media.dart';
 import 'package:first_app/base/res/styles/app_styles.dart';
+import 'package:first_app/base/widgets/app_double_text.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -56,10 +57,15 @@ class HomeScreen extends StatelessWidget {
                       Text("Search")
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 30),
+                const AppDoubleText(
+                  bigText: 'Upcoming Flights',
+                  smallText: 'View all',
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
